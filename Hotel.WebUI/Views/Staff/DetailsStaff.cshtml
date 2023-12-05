@@ -1,0 +1,42 @@
+﻿@model ResultStaffDto
+@{
+    ViewData["Title"] = "DetailsStaff";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Personel</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Personel Adı</th>
+                    <th>Personel Ünvan</th>
+                    <th>Sosyal Medya 1</th>
+                    <th>Sosyal Medya 2</th>
+                    <th>Sosyal Medya 3</th>
+               
+                </tr>
+            </thead>
+            <tbody>
+              
+                    <tr>
+                        <td>@Model.StaffID</td>
+                        <td>@Model.Name</td>
+                        <td>@Model.Title</td>
+                        <td>@Model.SocaialMedia1</td>
+                        <td>@Model.SocaialMedia2</td>
+                        <td>@Model.SocaialMedia3</td>
+                 
+                 
+                    </tr>
+                
+
+            </tbody>
+        </table>
+    </div>
+</div>

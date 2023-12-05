@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-lg-3 col-sm-6">
+            <div class="card gradient-1">
+                <div class="card-body">
+                    <h3 class="card-title text-white">Oda Sayısı</h3>
+                    <div class="d-inline-block">
+                        <h2 class="text-white">@ViewBag.RoomCount</h2>
+
+                    </div>
+                    <span class="float-right display-5 opacity-5"><i class="fa fa-building"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card gradient-2">
+                <div class="card-body">
+                    <h3 class="card-title text-white">Referans Sayısı</h3>
+                    <div class="d-inline-block">
+                        <h2 class="text-white">@ViewBag.TestimonialCount</h2>
+
+                    </div>
+                    <span class="float-right display-5 opacity-5"><i class="fa fa-address-card"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card gradient-3">
+                <div class="card-body">
+                    <h3 class="card-title text-white">Personel Sayısı</h3>
+                    <div class="d-inline-block">
+                        <h2 class="text-white">@ViewBag.StaffCount</h2>
+
+                    </div>
+                    <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <div class="card gradient-4">
+                <div class="card-body">
+                    <h3 class="card-title text-white">İletişim Sayısı</h3>
+                    <div class="d-inline-block">
+                        <h2 class="text-white">@ViewBag.ContactCount</h2>
+
+                    </div>
+                    <span class="float-right display-5 opacity-5"><i class="fa fa-phone-square"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-15">
+        <div class="card card-widget">
+            <div class="card-body">
+                <h2 class="text-muted">Rezervasyonlar </h2>
+                <h4 class="mt-4"> Toplam: @ViewBag.BookingCount</h4>
+                <div class="mt-4">
+     
+                    <h6 class="m-t-10 text-muted ">Onay Bekleyen<span class="pull-right">@ViewBag.WaitBookingCount%</span></h6>
+                    <div class="progress mb-3" style="height: 7px">
+                        <div class="progress-bar bg-warning" style="width: @ViewBag.WaitBookingCount%;" role="progressbar">
+                            <span class="sr-only">@ViewBag.ConfirmBookingCount% Onay Bekleyen </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+            
+                    <h6 class="m-t-10 text-muted ">Onaylanan<span class="pull-right">@ViewBag.ConfirmBookingCount%</span></h6>
+                    <div class="progress mb-3" style="height: 7px">
+                        <div class="progress-bar bg-success" style="width: @ViewBag.ConfirmBookingCount%;" role="progressbar">
+                            <span class="sr-only">@ViewBag.ConfirmBookingCount% Onaylanan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4">
+
+                    <h6 class="m-t-10 text-muted ">Onaylanmayan <span class="pull-right">@ViewBag.DeniedBookingCount%</span></h6>
+                    <div class="progress mb-3" style="height: 7px">
+                        <div class="progress-bar bg-danger" style="width: @ViewBag.DeniedBookingCount%;" role="progressbar">
+                            <span class="sr-only">@ViewBag.DeniedBookingCount% Onaylanmayan</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+﻿@model List<ResultSubscribeDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Abonelikler</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+
+                <tr>
+                    <th>#</th>
+                    <th>Mail</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.SubscribeID</td>
+                        <td>@item.Mail</td>
+       
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

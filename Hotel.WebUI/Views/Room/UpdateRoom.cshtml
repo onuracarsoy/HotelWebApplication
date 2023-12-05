@@ -1,0 +1,60 @@
+﻿@model UpdateRoomDto
+@{
+    ViewData["Title"] = "UpdateRoom";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-title">
+    <h4>Oda Güncelle</h4>
+</div>
+<form method="post">
+    <input type="hidden" asp-for="RoomID" />
+
+    <label>Oda Başlığı</label>
+    <input type="text" asp-for="Title" class="form-control input-rounded" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <br />
+
+    <label>Oda Numarası</label>
+    <input type="text" asp-for="RoomNumber" class="form-control input-rounded" />
+    <span asp-validation-for="RoomNumber" class="text-danger"></span>
+    <br />
+    <label>Oda Resmi</label>
+    <input type="text" asp-for="RoomCoverImage" class="form-control input-rounded" />
+    <span asp-validation-for="RoomCoverImage" class="text-danger"></span>
+    <br />
+
+    <label>Açıklama</label>
+    <input type="text" asp-for="Descripton" class="form-control input-rounded" />
+    <span asp-validation-for="Descripton" class="text-danger"></span>
+    <br />
+    <label>Yatak Sayısı</label>
+    <input type="text" asp-for="BedCount" class="form-control input-rounded" />
+    <span asp-validation-for="BedCount" class="text-danger"></span>
+    <br />
+    <label>Banyo Sayısı</label>
+    <input type="text" asp-for="BathCount" class="form-control input-rounded" />
+    <span asp-validation-for="BathCount" class="text-danger"></span>
+    <br />
+    <label>Wifi Durumu</label>
+    <div class="col-md-6">
+        <div class="form-floating">
+            <select class="form-select" asp-for="Wifi">
+                <option value="Var">Var</option>
+                <option value="Yok">Yok</option>
+
+            </select>
+
+        </div>
+    </div>
+    <span asp-validation-for="Wifi" class="text-danger"></span>
+    <br />
+    <label>Fiyat</label>
+    <input type="text" asp-for="Price" class="form-control input-rounded" />
+    <span asp-validation-for="Price" class="text-danger"></span>
+
+    <br />
+    <button class="btn mb-1 btn-rounded btn-success ">Güncelle</button>
+</form>
+
+

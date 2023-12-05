@@ -1,0 +1,49 @@
+﻿@model ResultRoomDto
+@{
+    ViewData["Title"] = "DetailsRoom";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Oda</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Oda Başlığı</th>
+                    <th>Oda Numarası</th>
+                    <th>Oda resmi</th>
+                    <th>Açıklama</th>
+                    <th>Yatak sayısı</th>
+                    <th>Banyo sayısı</th>
+                    <th>Wifi</th>
+                    <th>Fiyatı</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>@Model.RoomID</td>
+                    <td>@Model.Title</td>
+                    <td>@Model.RoomNumber</td>
+                    <td>@Model.RoomCoverImage</td>
+                    <td>@Model.Descripton</td>
+                    <td>@Model.BedCount</td>
+                    <td>@Model.BathCount</td>
+                    <td>@Model.Wifi</td>
+                    <td>@Model.Price</td>
+
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+

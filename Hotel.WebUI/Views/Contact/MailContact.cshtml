@@ -1,0 +1,88 @@
+﻿@model AdminMailViewModel
+
+@{
+    ViewData["Title"] = "MailContact";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12">
+
+    <div class="read-content">
+
+        <div class="media pt-5">
+       
+            <div class="media-body">
+                <h5 class="m-b-3">@Model.Name</h5>
+                <p class="m-b-2"><span class="m-b-2 text-dark">Tarih: </span>@Model.Date</p>
+            </div>
+
+        </div>
+        <div class="media mb-4 mt-1">
+            <div class="media-body">
+                @*       <span class="float-right">07:23 AM</span>*@
+                <h4 class="m-0 text-primary"><span class="m-0 text-dark">Konu: </span>@Model.Subject</h4><small class="text-muted"> <span class="m-b-2 text-dark">Mail: </span>@Model.Mail</small>
+            </div>
+        </div>
+
+        <p>
+            @Model.Message
+        </p>
+
+        <hr>
+
+
+        <hr>
+        <h2>Cevapla</h2>
+        <div class="form-group p-t-15">
+            <form method="post" asp-action="MailContact" asp-controller="Contact">
+                <input type="hidden" asp-for="ContactID" />
+                <div class="form-group">
+                    <input type="text" class="form-control bg-transparent" asp-for="Mail" placeholder="Mail">
+                    <span asp-validation-for="Mail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control bg-transparent" asp-for="ASubject" placeholder="Konu">
+                    <span asp-validation-for="ASubject" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <textarea class="textarea_editor form-control bg-light" rows="5" asp-for="Body" placeholder="Mesaj"></textarea>
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+
+                <div class="text-left m-t-15">
+                    <button class="btn btn-primary m-b-30 m-t-15 f-s-14 p-l-20 p-r-20 m-r-10" type="submit"><i class="fa fa-paper-plane m-r-5"></i> Gönder</button>
+                    <a class="btn btn-danger m-b-30 m-t-15 f-s-14 p-l-20 p-r-20" href="/Contact/Index"><i class="ti-close m-r-5 f-s-12"></i> İptal</a>
+                </div>
+            </form>
+        </div>
+    </div>
+  
+</div>
+
+@*<div class="col-lg-12">
+    <div class="card">
+        <div class="compose-content mt-5">
+            <form method="post" asp-action="MailContact" asp-controller="Contact">
+                <input type="hidden" asp-for="ContactID" />
+                <div class="form-group">
+                    <input type="text" class="form-control bg-transparent" asp-for="Mail" placeholder="Mail">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control bg-transparent" asp-for="ASubject" placeholder="Konu">
+                </div>
+                <div class="form-group">
+                    <textarea class="textarea_editor form-control bg-light" rows="15" asp-for="Body" placeholder="Mesaj"></textarea>
+                </div>
+
+                <div class="text-left m-t-15">
+                    <button class="btn btn-primary m-b-30 m-t-15 f-s-14 p-l-20 p-r-20 m-r-10" type="submit"><i class="fa fa-paper-plane m-r-5"></i> Gönder</button>
+                    <button class="btn btn-dark m-b-30 m-t-15 f-s-14 p-l-20 p-r-20" href="/Contact/Index"><i class="ti-close m-r-5 f-s-12"></i> İptal</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>*@
+
+

@@ -1,0 +1,45 @@
+﻿@model ResultAboutDto
+@{
+    ViewData["Title"] = "DetailsAbout";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Hakkımızda</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Hakkımızda Başlık 1</th>
+                    <th>Hakkımzıda Başlık 2</th>
+                    <th>İçerik</th>
+                    <th>Oda Sayısı</th>
+                    <th>Personel Sayısı</th>
+                    <th>Müşteri Sayısı</th>
+             
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>@Model.AboutID</td>
+                    <td>@Model.Title1</td>
+                    <td>@Model.Title2</td>
+                    <td>@Model.Content</td>
+                    <td>@Model.RoomCount</td>
+                    <td>@Model.StaffCount</td>
+                    <td>@Model.CustomerCount</td>
+ 
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+

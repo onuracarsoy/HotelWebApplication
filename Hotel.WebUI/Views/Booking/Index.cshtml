@@ -1,0 +1,64 @@
+﻿@model List<ResultBookingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Rezervasyonlar</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+
+                <tr>
+                    <th>#</th>
+                    <th>Ad Soyad</th>
+                    <th>Giriş Tarihi</th>
+                    <th>Çıkış Tarihi</th>
+                    <th>Durum</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.BookingID</td>
+                        <td>@item.Name</td>
+                        <td>@item.CheckIn</td>
+                        <td>@item.CheckOut</td>
+                        @if (item.Status == "Onay Bekliyor")
+                        {
+                            <td class="text-warning">Onay Bekliyor</td>
+                        }
+                        else if (item.Status == "Onaylandı")
+                        {
+                            <td class="text-success">Onaylandı</td>
+                        }
+                        else
+                        {
+                            <td class="text-danger">Onaylanmadı</td>
+                        } 
+
+                        <td><a href="/Booking/DeleteBooking/@item.BookingID" class="btn mb-1 btn-rounded btn-danger">Sil</a></td>
+                        <td><a href="/Booking/UpdateBooking/@item.BookingID" class="btn mb-1 btn-rounded btn-warning">Güncelle</a></td>
+                        <td><a href="/Booking/MailBooking/@item.BookingID" class="btn mb-1 btn-rounded btn-primary">Mail Gönder</a></td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+

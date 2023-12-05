@@ -1,0 +1,42 @@
+﻿@model ResultServiceDto
+@{
+    ViewData["Title"] = "DetailsService";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Hizmet</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Hizmet Başlığı</th>
+                    <th>Hizmet İkon</th>
+                    <th>Hizmet İkon Önizleme</th>
+                    <th>Açıklama</th>
+                
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>@Model.ServiceID</td>
+                    <td>@Model.Title</td>
+                    <td>@Model.ServiceIcon</td>
+                    <td><span class="@Model.ServiceIcon"></span> </td>
+                    <td>@Model.Description</td>
+                 
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

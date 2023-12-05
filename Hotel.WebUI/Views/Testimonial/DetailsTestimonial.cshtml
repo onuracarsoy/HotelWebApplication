@@ -1,0 +1,43 @@
+﻿@model ResultTestimonialDto
+@{
+    ViewData["Title"] = "DetailsTestimonial";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Referans</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Referans Adı</th>
+                    <th>Referans Ünvan</th>
+                    <th>Açıklama</th>
+                    <th>Resim</th>
+                
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>@Model.TestimonialID</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Title</td>
+                    <td>@Model.Description</td>
+                    <td>@Model.Image</td>
+               
+
+
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

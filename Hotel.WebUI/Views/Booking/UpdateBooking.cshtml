@@ -1,0 +1,127 @@
+﻿@model UpdateBookingDto
+@{
+    ViewData["Title"] = "UpdateBooking";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-title">
+    <h4>Rezervasyon Güncelle</h4>
+</div>
+<form method="post">
+    <input type="hidden" asp-for="BookingID" />
+    <input type="hidden" asp-for="Name" />
+    <input type="hidden" asp-for="Mail" />
+    <input type="hidden" asp-for="CheckIn" />
+    <input type="hidden" asp-for="CheckOut" />
+    <input type="hidden" asp-for="AdultCount" />
+    <input type="hidden" asp-for="ChildCount" />
+    <input type="hidden" asp-for="RoomCount" />
+    <input type="hidden" asp-for="SpecialRequest" />
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+
+
+
+                <div class="read-content">
+          
+                    <hr>
+                    <div class="media mb-4 mt-1">
+                        <div class="media-body">
+
+                            <h4 class="m-0 text-primary"><span class="m-0 text-dark">Ad Soyad: </span>@Model.Name</h4>
+                            <br />
+                            <h4 class="m-0 text-primary"><span class="m-0 text-dark">Mail: </span>@Model.Mail</h4>
+                            <br />
+                            <h4 class="m-0 text-primary"><span class="m-0 text-dark">Giriş Tarihi: </span>@Model.CheckIn</h4>
+                            <br />
+                            <h4 class="m-0 text-primary"><span class="m-0 text-dark">Çıkış Tarihi: </span>@Model.CheckOut</h4>
+                            <br />
+                            <h4 class="m-0 text-primary"><span class="m-0 text-dark">Yetişkin sayısı: </span>@Model.AdultCount</h4>
+                            <br />
+                            <h4 class="m-0 text-primary"><span class="m-0 text-dark">Çocuk Sayısı: </span>@Model.ChildCount</h4>
+                            <br />
+                            <h4 class="m-0 text-primary"><span class="m-0 text-dark">Oda Sayısı: </span>@Model.RoomCount</h4>
+                            <br />
+                            <h4 class="m-0 text-primary"><span class="m-0 text-dark">Mesaj: </span>@Model.SpecialRequest</h4>
+                       
+                  
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  @*  <label>Ad Soyad</label>
+    <input type="text" asp-for="Name" class="form-control input-rounded" />
+
+    <br />
+
+    <label>Mail</label>
+    <input type="text" asp-for="Mail" class="form-control input-rounded" />
+
+    <br />
+    <label>Giriş Tarihi</label>
+    <input type="text" asp-for="CheckIn" class="form-control input-rounded" />
+
+    <br />
+
+    <label>Çıkış Tarihi</label>
+    <input type="text" asp-for="CheckOut" class="form-control input-rounded" />
+
+    <br />
+    <label>Yetişkin Sayısı</label>
+    <input type="text" asp-for="AdultCount" class="form-control input-rounded" />
+
+    <br />
+    <label>Çocuk Sayısı</label>
+    <input type="text" asp-for="ChildCount" class="form-control input-rounded" />
+
+    <br />
+    <label>Oda Sayısı</label>
+    <input type="text" asp-for="RoomCount" class="form-control input-rounded" />
+
+    <br />
+    <label>Özel İstek</label>
+    <input type="text" asp-for="SpecialRequest" class="form-control input-rounded" />
+
+    <br />*@
+
+    <label>Açıklama</label>
+    <textarea asp-for="Description" class="form-control input-rounded" ></textarea>
+    <br />
+
+    <label>Durum : @if (Model.Status == "Onay Bekliyor")
+        {
+            <span class="text-warning">Onay Bekliyor</span>
+        }
+        else if(Model.Status == "Onaylandı")
+        {
+            <span class="text-success">Onaylandı</span>
+        }
+        else
+        {
+            <span class="text-danger">Onaylanmadı</span>
+        }
+    </label>
+    <div class="col-md-6">
+        <div class="form-floating">
+            <select class="form-select" asp-for="Status">
+                <option value="Onaylandı">Onaylandı</option>
+                <option value="Onaylanmadı">Onaylanmadı</option>
+
+            </select>
+
+        </div>
+    </div>
+
+
+
+    <br />
+    <button class="btn mb-1 btn-rounded btn-success ">Güncelle</button>
+    <a class="btn mb-1 btn-rounded btn-danger " href="/Booking/Index">İptal</a>
+</form>
+
+

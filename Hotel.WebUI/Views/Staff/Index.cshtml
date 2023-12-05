@@ -1,0 +1,42 @@
+﻿@model List<ResultStaffDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Personeller</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Personel Adı</th>
+                    <th>Personel Ünvan</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+                    <th>Detaylar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.StaffID</td>
+                        <td>@item.Name</td>
+                        <td>@item.Title</td>
+                        <td><a href="/Staff/DeleteStaff/@item.StaffID" class="btn mb-1 btn-rounded btn-danger">Sil</a></td>
+                        <td><a href="/Staff/UpdateStaff/@item.StaffID" class="btn mb-1 btn-rounded btn-warning">Güncelle</a></td>
+                        <td><a href="/Staff/DetailsStaff/@item.StaffID" class="btn mb-1 btn-rounded btn-dark">Detaylar</a></td>
+                    </tr>
+                }
+              
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<a href="/Staff/AddStaff/" class="btn mb-1 btn-rounded btn-primary"> Yeni Personel Ekle</a>
+

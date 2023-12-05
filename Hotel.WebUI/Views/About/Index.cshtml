@@ -1,0 +1,41 @@
+﻿@model List<ResultAboutDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<div class="card-body">
+    <div class="card-title">
+        <h4>Hakkımızda</h4>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+
+                <tr>
+                    <th>#</th>
+                    <th>Hakkımzıda Başlık 1</th>
+                    <th>Güncelle</th>
+                    <th>Detaylar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.AboutID</td>
+                        <td>@item.Title1</td>
+
+                        <td><a href="/About/UpdateAbout/@item.AboutID" class="btn mb-1 btn-rounded btn-warning">Güncelle</a></td>
+                        <td><a href="/About/DetailsAbout/@item.AboutID" class="btn mb-1 btn-rounded btn-dark">Detaylar</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
